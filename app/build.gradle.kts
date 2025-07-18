@@ -61,5 +61,4 @@ dependencies {
     implementation("androidx.work:work-runtime:2.10.2")
     //For image widget
     implementation("io.coil-kt:coil-compose:2.4.0")
-    implementation("androidx.compose.runtime:runtime-livedata:1.8.3")
 }

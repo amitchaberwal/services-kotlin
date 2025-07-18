@@ -1,19 +1,17 @@
 package com.amit.basic.intents
 
+import android.content.BroadcastReceiver
 import android.content.Intent
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.amit.basic.Greeting
-import com.amit.basic.broadcasts.BroadcastSendActivity
 import com.amit.basic.ui.theme.AndroidBasicsTheme
 
 class IntentBasics : ComponentActivity(){
@@ -23,16 +21,12 @@ class IntentBasics : ComponentActivity(){
         setContent {
             AndroidBasicsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Start Intent",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Spacer(Modifier.padding(innerPadding))
                     Button(onClick = {
                         //1. Start Activity
-                        Intent(applicationContext,BroadcastSendActivity::class.java ).also {
+                        Intent(applicationContext, BroadcastReceiver::class.java ).also {
                             startActivity(it)
                         }
-
                         //2. Start Other App
                         Intent(Intent.ACTION_SEND).also {
                             it.`package` = "com.google.android.youtube"
