@@ -26,6 +26,7 @@ class IntentBasics : ComponentActivity(){
                         //1. Start Activity
                         Intent(applicationContext, BroadcastReceiver::class.java ).also {
                             startActivity(it)
+//                            finish() // finish is used to clear current and backstack activities(new activity will be pushed and current will be removed)
                         }
                         //2. Start Other App
                         Intent(Intent.ACTION_SEND).also {

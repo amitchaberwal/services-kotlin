@@ -4,6 +4,14 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+class HelloWorldPlugin: Plugin<Project>{
+    override fun apply(target: Project) {
+        print("Hello World")
+    }
+}
+
+apply<HelloWorldPlugin>()
+
 android {
     namespace = "com.amit.basic"
     compileSdk = 36
@@ -19,12 +27,41 @@ android {
     }
 
     buildTypes {
+        create("staging"){
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+//    flavorDimensions += "default"
+    flavorDimensions += listOf("default","style")
+    productFlavors {
+        create("uat"){
+            dimension = "default"
+            applicationIdSuffix = ".uat"
+            buildConfigField("String","BASE_URL", "https://uedutect.com/")
+        }
+        create("prod"){
+            dimension = "default"
+            buildConfigField("String","BASE_URL", "https://edutect.com/")
+        }
+
+        create("red"){
+            dimension = "style"
+            buildConfigField("String","Style", "Red")
+        }
+        create("green"){
+            dimension = "style"
+            buildConfigField("String","Style", "Green")
         }
     }
     compileOptions {
@@ -36,11 +73,11 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -61,4 +98,7 @@ dependencies {
     implementation("androidx.work:work-runtime:2.10.2")
     //For image widget
     implementation("io.coil-kt:coil-compose:2.4.0")
+
+//    // for our library
+//    implementation(project(":amit_library"))
 }

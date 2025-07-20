@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidBasics"
 include(":app")
- 
+//include(":amit_library")
