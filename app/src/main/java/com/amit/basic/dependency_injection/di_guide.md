@@ -84,10 +84,9 @@ but there are multiple type:
     3.4 SingletonComponent -> live as long as app is active.
     3.5 ServiceComponent -> for service.
 
-NOTE:
-a. This is applicable on all the dependencies defined in the module(AppModule).
-b. If there are multiple dependencies of same type then we can get exact dependency using @Named
-parameter
+    NOTE:
+    a. This is applicable on all the dependencies defined in the module(AppModule).
+    b. If there are multiple dependencies of same type then we can get exact dependency using @Named parameter
 
 4. Define ViewModel
 
