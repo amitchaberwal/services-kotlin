@@ -1,5 +1,10 @@
 # Gradle Basics
 
+## Run Gradle Commands from root of project
+```bash
+./gradlew clean
+```
+
 ## 1. Add custom plugin in module app
 
 ```kotlin

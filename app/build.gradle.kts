@@ -107,6 +107,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.1")
 
+    //Viewmodel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.2")
+
 //    // for our library
 //    implementation(project(":amit_library"))
 }

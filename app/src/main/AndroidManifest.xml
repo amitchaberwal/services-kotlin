@@ -2,9 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-<!--    Permission for foreground service-->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <!--    Permission for foreground service-->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    
 
     <application
         android:name=".RunningApplication"
@@ -36,7 +46,6 @@
 
         </activity>
         <activity android:name=".intents.IntentBasics"/>
-        <activity android:name=".broadcasts.BroadcastSendActivity"/>
 
         <!--            Define service type if using sensitive part-->
         <service android:name=".services.RunningForgroundService"
