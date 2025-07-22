@@ -1,5 +1,5 @@
 ## Clean Architecture based project structure
-
+```text
 /App
 ├── myapp/
 │   ├── ui/
@@ -65,3 +65,4 @@
 │   │   │   │   ├── ProfileLocalDataSource.kt
 │   │   ├── di/
 │   │   │   ├── ProfileModule.kt
+```
