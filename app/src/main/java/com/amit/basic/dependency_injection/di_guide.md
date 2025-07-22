@@ -34,9 +34,7 @@ then add application name in manifest under application:name
 2. Setup on Activity level
 ```kotlin
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
-    
-}
+class MainActivity : ComponentActivity() {}
 ```
 
 3. Add Dependencies for injection in DI
