@@ -48,20 +48,18 @@ android {
         create("uat"){
             dimension = "default"
             applicationIdSuffix = ".uat"
-            buildConfigField("String","BASE_URL", "https://uedutect.com/")
+            buildConfigField("String","BASE_URL", "\"https://uedutect.com/\"")
         }
         create("prod"){
             dimension = "default"
-            buildConfigField("String","BASE_URL", "https://edutect.com/")
+            buildConfigField("String","BASE_URL", "\"https://edutect.com/\"")
         }
 
         create("red"){
             dimension = "style"
-            buildConfigField("String","Style", "Red")
         }
         create("green"){
             dimension = "style"
-            buildConfigField("String","Style", "Green")
         }
     }
     compileOptions {
